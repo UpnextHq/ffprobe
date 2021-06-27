@@ -6,7 +6,7 @@ var stream = require('stream'),
 
 module.exports = getInfo;
 function getInfo(filePath, opts, cb) {
-  var params = [];
+  var params = opts.params || [];
   params.push('-show_streams', '-print_format', 'json', filePath);
 
   var d = Deferred();
